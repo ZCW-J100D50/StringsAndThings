@@ -54,8 +54,26 @@ public class StringsAndThings {
      */
     public Boolean containsEqualNumberOfIsAndNot(String input)
     {
-
-        return null;
+        int isCounter = 0, notCounter = 0;
+        for (int i = 0; i < input.length() - 2; i++)
+        {
+            if ((input.charAt(i) == 'i') && (input.charAt(i + 1) == 's'))
+            {
+                isCounter++;
+            }
+            if ((input.charAt(i) == 'n') && (input.charAt(i + 1) == 'o') && (input.charAt(i + 2) == 't'))
+            {
+                notCounter++;
+            }
+        }
+        if (isCounter == notCounter)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -67,7 +85,34 @@ public class StringsAndThings {
      */
     public Boolean gIsHappy(String input)
     {
-        return null;
+        boolean output = false;
+        for (int i = 0; i < input.length(); i++)
+        {
+            if (i == 0)
+            {
+                if (input.charAt(i) == 'g')
+                {
+                    if (input.charAt(i+1) == 'g')
+                        output = true;
+
+                    else
+                    {
+                        output = false;
+                    }
+                }
+            }
+            else
+            {
+                if (input.charAt(i) == 'g')
+                {
+                    if (input.charAt(i-1) == 'g' || input.charAt(i+1) == 'g')
+                        output = true;
+                    else
+                        return false;
+                }
+            }
+        }
+        return output;
     }
 
 
