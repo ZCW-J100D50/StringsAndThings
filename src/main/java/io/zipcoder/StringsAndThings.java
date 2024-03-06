@@ -14,8 +14,18 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
-    public Integer countYZ(String input){
-        return null;
+    public Integer countYZ(String input)
+    {
+        int cYZ = 0;
+        String[] arrOfStr = input.split(" ");
+        for (int i = 0; i < arrOfStr.length; i++)
+        {
+            if (arrOfStr[i].substring(arrOfStr[i].length() - 1).equals("y") || arrOfStr[i].substring(arrOfStr[i].length() - 1).equals("z"))
+            {
+                cYZ ++;
+            }
+        }
+        return cYZ;
     }
 
     /**
@@ -27,8 +37,11 @@ public class StringsAndThings {
      *           removeString("Hello there", "e") //  Should return "Hllo thr"
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String removeString(String base, String remove){
-        return null;
+    public String removeString(String base, String remove)
+    {
+        String finalstring = "";
+        finalstring = base.replace(remove, "");
+        return finalstring;
     }
 
     /**
@@ -39,7 +52,9 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
+    public Boolean containsEqualNumberOfIsAndNot(String input)
+    {
+
         return null;
     }
 
@@ -50,7 +65,8 @@ public class StringsAndThings {
      *           gHappy("xxgxx") // Should return  false
      *           gHappy("xxggyygxx") // Should return  false
      */
-    public Boolean gIsHappy(String input){
+    public Boolean gIsHappy(String input)
+    {
         return null;
     }
 
@@ -62,7 +78,17 @@ public class StringsAndThings {
      *            countTriple("xxxabyyyycd") // Should return 3
      *            countTriple("a") // Should return 0
      */
-    public Integer countTriple(String input){
-        return null;
+    public Integer countTriple(String input)
+    {
+        int counter = 0;
+        for (int i = 0; i < input.length() - 2; i++)
+        {
+            char tmp = input.charAt(i);
+            if (tmp == input.charAt(i+1) && tmp == input.charAt(i+2))
+            {
+                counter++;
+            }
+        }
+        return counter;
     }
 }
